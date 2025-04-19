@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <h1>Welcome to the Unit Converter</h1>
+  <title>Unit Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #808287;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+
+    select, input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 80%;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Unit Converter</h2>
+
+    <select id="conversionType">
+      <option value="cToF">Celsius to Fahrenheit</option>
+      <option value="kgToLb">Kilogram to Pound</option>
+      <option value="mToCm">Meter to Centimeter</option>
+    </select>
+
+    <input type="text" id="inputValue" placeholder="Enter value">
+
+    <button onclick="convert()">Convert</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convert() {
+      let type = document.getElementById("conversionType").value;
+      let input = document.getElementById("inputValue").value;
+      let output;
+
+
+      let value = parseFloat(input); 
+
+      if (type === "cToF") {
+        output = (value * 9/5) + 32;
+      } else if (type === "kgToLb") {
+        output = value * 2.20462;
+      } else if (type === "mToCm") {
+        output = value * 100;
+      }
+
+      document.getElementById("result").innerText = "Result: " + output.toFixed(2);
+    }
+  </script>
+</body>
+</html>
