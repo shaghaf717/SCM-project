@@ -37,6 +37,8 @@
       <option value="cToF">Celsius to Fahrenheit</option>
       <option value="kgToLb">Kilogram to Pound</option>
       <option value="mToCm">Meter to Centimeter</option>
+      <option value="msToKmh">M/S to K/H</option>
+</select>
     </select>
 
     <input type="text" id="inputValue" placeholder="Enter value">
@@ -61,7 +63,10 @@
         output = value * 2.20462;
       } else if (type === "mToCm") {
         output = value * 100;
-      }
+      } else if (type === "msToKmh") {
+  output = value * 3.6;
+}
+
 
       document.getElementById("result").innerText = "Result: " + output.toFixed(2);
     }
